@@ -1,0 +1,88 @@
+
+@use '../style/includes/steper';
+
+@use '../styleQuiz/imports/progressBar';
+
+%container{
+    height: 10vh;
+    width: 10vh;
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid  rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+    text-align: center;
+    
+    }
+
+body{
+    display: grid;
+    align-items: center;
+    color: white;
+    height: 100vh;
+    margin: 0px;
+    padding: 0px;
+    background-image: url("/images/stacked-steps-haikei.png"); 
+    background-size: cover;
+
+    header{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        .timeCounter{
+        @extend %container;
+        font-size: large;
+     }
+        .quistionsCounter{
+            @extend %container;
+            font-size: large;
+            color: black;
+        }
+
+        img{
+            
+        }
+
+
+    }
+    main{
+        font-family: 'Bebas Neue', cursive;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.2);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(6.3px);
+        -webkit-backdrop-filter: blur(6.3px);
+        border: 1px solid  rgba(255, 255, 255, 0.3);
+        text-align: center;
+        display: grid;
+        align-items: center;
+        .sectionCarts{
+            color: rgb(71, 68, 68);
+            justify-items: center;
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+            gap: 50px;
+            
+        }
+        .carts{
+            background-color: rgb(237, 149, 149);
+            border: 3px solid white;
+            margin: 2px;
+            padding: 20px;
+            border-radius: 5px;
+            height: 220px;
+        }
+
+
+    }
+
+    footer{
+        
+
+
+    }
+
+
+    
+    
+}
+
+

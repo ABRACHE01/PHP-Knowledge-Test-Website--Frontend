@@ -1,0 +1,203 @@
+.wrapper-progressBar {
+  width: 100%;
+}
+
+.progressBar li {
+  list-style-type: none;
+  float: left;
+  width: 33%;
+  position: relative;
+  text-align: center;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.progressBar li:before {
+  content: " ";
+  line-height: 30px;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #ddd;
+  display: block;
+  text-align: center;
+  margin: 0 auto 10px;
+  background-color: white;
+}
+
+.progressBar li:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  background-color: #ddd;
+  top: 15px;
+  left: -50%;
+  z-index: -1;
+}
+
+.progressBar li:first-child:after {
+  content: none;
+}
+
+.progressBar li.active {
+  color: dodgerblue;
+}
+
+.progressBar li.active:before {
+  border-color: dodgerblue;
+  background-color: dodgerblue;
+}
+
+.progressBar .active:after {
+  background-color: dodgerblue;
+}
+
+body {
+  background: #eef1f3;
+}
+
+@-webkit-keyframes loader {
+  0% {
+    width: 0;
+  }
+  20% {
+    width: 10%;
+  }
+  25% {
+    width: 24%;
+  }
+  43% {
+    width: 41%;
+  }
+  56% {
+    width: 50%;
+  }
+  66% {
+    width: 52%;
+  }
+  71% {
+    width: 60%;
+  }
+  75% {
+    width: 76%;
+  }
+  94% {
+    width: 86%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes loader {
+  0% {
+    width: 0;
+  }
+  20% {
+    width: 10%;
+  }
+  25% {
+    width: 24%;
+  }
+  43% {
+    width: 41%;
+  }
+  56% {
+    width: 50%;
+  }
+  66% {
+    width: 52%;
+  }
+  71% {
+    width: 60%;
+  }
+  75% {
+    width: 76%;
+  }
+  94% {
+    width: 86%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+.progress-bar {
+  border-radius: 60px;
+  overflow: hidden;
+  width: 100%;
+}
+.progress-bar span {
+  display: block;
+}
+
+.bar {
+  background: rgba(0, 0, 0, 0.075);
+}
+
+.progress {
+  -webkit-animation: loader 8s ease infinite;
+          animation: loader 8s ease infinite;
+  background: #dc4d25;
+  color: #fff;
+  padding: 5px;
+  width: 0;
+}
+
+body header .quistionsCounter, body header .timeCounter {
+  height: 10vh;
+  width: 10vh;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 15px;
+  text-align: center;
+}
+
+body {
+  display: grid;
+  align-items: center;
+  color: white;
+  height: 100vh;
+  margin: 0px;
+  padding: 0px;
+  background-image: url("/images/stacked-steps-haikei.png");
+  background-size: cover;
+}
+body header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+body header .timeCounter {
+  font-size: large;
+}
+body header .quistionsCounter {
+  font-size: large;
+  color: black;
+}
+body main {
+  font-family: "Bebas Neue", cursive;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6.3px);
+  -webkit-backdrop-filter: blur(6.3px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  text-align: center;
+  display: grid;
+  align-items: center;
+}
+body main .sectionCarts {
+  color: rgb(71, 68, 68);
+  justify-items: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 50px;
+}
+body main .carts {
+  background-color: rgb(237, 149, 149);
+  border: 3px solid white;
+  margin: 2px;
+  padding: 20px;
+  border-radius: 5px;
+  height: 220px;
+}/*# sourceMappingURL=style.css.map */

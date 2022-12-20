@@ -1,0 +1,182 @@
+.wrapper-progressBar {
+  width: 100%;
+}
+
+.progressBar li {
+  list-style-type: none;
+  float: left;
+  width: 33%;
+  position: relative;
+  text-align: center;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.progressBar li:before {
+  content: " ";
+  line-height: 30px;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #ddd;
+  display: block;
+  text-align: center;
+  margin: 0 auto 10px;
+  background-color: white;
+}
+
+.progressBar li:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  background-color: #ddd;
+  top: 15px;
+  left: -50%;
+  z-index: -1;
+}
+
+.progressBar li:first-child:after {
+  content: none;
+}
+
+.progressBar li.active {
+  color: dodgerblue;
+}
+
+.progressBar li.active:before {
+  border-color: dodgerblue;
+  background-color: dodgerblue;
+}
+
+.progressBar .active:after {
+  background-color: dodgerblue;
+}
+
+.example_g, main section {
+  width: 320px;
+  height: 50px;
+  border: none;
+  outline: none;
+  color: #494949;
+  background: #ffffff;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 4px;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  transition: 0.5s ease-in-out;
+}
+
+.example_g:before, main section:before {
+  content: "";
+  background: linear-gradient(45deg, #FF0000, #e9a003, #ff6600, #f34155, #3FF4EB, #ad6fd4, #22abd8, #c70e48, #FF0000);
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  -webkit-animation: glowing 20s linear infinite;
+          animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.example_g:active, main section:active {
+  color: #000;
+}
+
+.example_g:active:after, main section:active:after {
+  background: transparent;
+}
+
+.example_g:hover, main section:hover {
+  transform: scale(1.05);
+}
+
+.example_g:hover:before, main section:hover:before {
+  opacity: 1;
+}
+
+.example_g:after, main section:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(238, 107, 107, 0.821);
+  left: 0;
+  top: 0;
+}
+
+@-webkit-keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+}
+
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+}
+body {
+  display: grid;
+  align-items: center;
+  color: white;
+  height: 100vh;
+  margin: 0px;
+  padding: 0px;
+  background-image: url("/images/stacked-steps-haikei.png");
+  background-size: cover;
+}
+body h1 {
+  font-size: 70px;
+  font-family: Bebas Neue;
+  padding: auto;
+  padding-left: 13px;
+}
+body h2 {
+  font-family: Bebas Neue;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+}
+
+main {
+  display: flex;
+  justify-content: space-around;
+}
+main a {
+  text-decoration: none;
+  color: #494949;
+}
+main section {
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6.3px);
+  -webkit-backdrop-filter: blur(6.3px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  text-align: center;
+  width: 20%;
+  height: 300%;
+}
+main section P, main section ul {
+  font-family: "Bebas Neue", cursive;
+  color: rgb(241, 229, 229);
+}
+main section ul {
+  text-align: start;
+}/*# sourceMappingURL=main.css.map */
