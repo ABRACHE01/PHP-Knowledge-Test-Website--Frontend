@@ -4,8 +4,8 @@
 @use '../styleQuiz/imports/progressBar';
 
 %container{
-    height: 10vh;
-    width: 10vh;
+    height: 20%;
+    width: 20%;
     background: rgba(255, 255, 255, 0.2);
     border: 1px solid  rgba(255, 255, 255, 0.3);
     border-radius: 15px;
@@ -14,6 +14,14 @@
     }
 
 body{
+    .hide{
+        display: none;
+
+    }
+    .remove{
+        display: block;
+    }
+   
     display: grid;
     align-items: center;
     color: white;
@@ -70,6 +78,53 @@ body{
             border-radius: 5px;
             height: 220px;
         }
+        .correct{
+            
+            background-color: green;
+            color: aliceblue;
+        }
+        .wrong{
+            
+            background-color: red;
+            color: aliceblue;
+        }
+        .allready_answered{
+            pointer-events: none;
+            
+
+        }
+
+        
+
+
+    }
+    .answers-indicator{
+        display: flex;
+        align-items: center;
+        
+
+        div{
+        @extend %container;
+        margin: 4px;
+        border-radius: 50px;
+        display: grid;
+        height: 50px;
+        width:50px ;
+       }
+       .wrong{
+        background-color: red;
+        background-image: url();
+
+       }
+
+       .correct{
+        background-color: green;
+        background-image: url();
+
+
+       }
+
+        
 
 
     }

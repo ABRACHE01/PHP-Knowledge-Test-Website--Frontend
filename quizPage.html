@@ -23,47 +23,48 @@
         <img src="./images/icons8-php-logo-160.png" alt="">
   
         <div class="quistionsCounter">
-            <p><span>11</span> / <span>2</span></p>
+            <p class="qustion-number"></p>
   
         </div>
 
     </header>
     
 
-    <main>
-
+    <main class="quiz-Box ">
         <div class="progress-bar">
             <span class="bar">
               <span class="progress"></span>
             </span>
           </div>
 
-        <h1> whats the abriviation of php ?</h1>
-       
-        <div class="sectionCarts">
+        <h1 class="qustion-text"></h1>
+
+        <div class="sectionCarts option-container">
         
-            <button type="button" class="carts">
-                <h2>Personal Home Page Tools</h2>
-            </button>
-            
-            <button type="button" class="carts">
-                <h2>Personal Home Page Tools</h2>
-            </button>
-
-            <button type="button" class="carts">
-                <h2>Personal Home Page Tools</h2>
-            </button>
-            <button type="button" class="carts">
-                <h2>Personal Home Page Tools</h2>
-            </button>
-
-           
        </div>
-
-
+       <button type="button" onclick=" next();" ><h4>submit</h4></button>
+       <div class="answers-indicator">
+    
+       </div>
+   
+    </main >
+    
+   
+    <main class="result-Box hide">
+        <div>
+            <h1>resaults score: <span class="total-quistion"></span></h1>
+            <h1>resaults score: <span>23</span></h1>
+            <h1>resaults score: <span>23</span></h1>
+        
+        </div>
+       
+       
+      
     </main>
-
+    
     <footer>
+     
+        
         <div class="row">
             <div class="col-xs-12 col-md-8 offset-md-2 block border">
                 <div class="wrapper-progressBar">
@@ -76,6 +77,13 @@
             </div>
         </div>
     </footer>
+<script src="/js/data.js"></script>
+<script src="/js/app.js"></script>
+
+
 </body>
+
+
+
 
 </html>

@@ -143,9 +143,9 @@ body {
   width: 0;
 }
 
-body header .quistionsCounter, body header .timeCounter {
-  height: 10vh;
-  width: 10vh;
+body .answers-indicator div, body header .quistionsCounter, body header .timeCounter {
+  height: 20%;
+  width: 20%;
   background: rgba(255, 255, 255, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 15px;
@@ -161,6 +161,12 @@ body {
   padding: 0px;
   background-image: url("/images/stacked-steps-haikei.png");
   background-size: cover;
+}
+body .hide {
+  display: none;
+}
+body .remove {
+  display: block;
 }
 body header {
   display: flex;
@@ -200,4 +206,34 @@ body main .carts {
   padding: 20px;
   border-radius: 5px;
   height: 220px;
+}
+body main .correct {
+  background-color: green;
+  color: aliceblue;
+}
+body main .wrong {
+  background-color: red;
+  color: aliceblue;
+}
+body main .allready_answered {
+  pointer-events: none;
+}
+body .answers-indicator {
+  display: flex;
+  align-items: center;
+}
+body .answers-indicator div {
+  margin: 4px;
+  border-radius: 50px;
+  display: grid;
+  height: 50px;
+  width: 50px;
+}
+body .answers-indicator .wrong {
+  background-color: red;
+  background-image: url();
+}
+body .answers-indicator .correct {
+  background-color: green;
+  background-image: url();
 }/*# sourceMappingURL=style.css.map */
