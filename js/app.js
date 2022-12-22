@@ -151,7 +151,7 @@ function quizOver(){
 }
 
 function quizResult(){
-    quizBox.querySelector(".total-quistion").innerHTML=quiz.length;
+    resultBox.querySelector(".total-quistion").innerHTML= quiz.length;
     // quizBox.querySelector(".total-quistion").innerHTML=quiz.length;
     // quizBox.querySelector(".total-quistion").innerHTML=quiz.length;
 }
