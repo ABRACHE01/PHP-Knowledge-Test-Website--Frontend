@@ -9,9 +9,12 @@
   position: relative;
   text-align: center;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  text-transform: uppercase;
 }
 
 .progressBar li:before {
+  background-image: url("/images/icons8-help-80.png");
+  background-size: cover;
   content: " ";
   line-height: 30px;
   border-radius: 50%;
@@ -28,7 +31,7 @@
   content: "";
   position: absolute;
   width: 100%;
-  height: 4px;
+  height: 5px;
   background-color: #ddd;
   top: 15px;
   left: -50%;
@@ -44,8 +47,8 @@
 }
 
 .progressBar li.active:before {
-  border-color: dodgerblue;
-  background-color: dodgerblue;
+  border-color: rgb(220, 117, 189);
+  background-color: rgb(220, 117, 189);
 }
 
 .progressBar .active:after {
@@ -148,9 +151,11 @@ body .answers-indicator div, body header .quistionsCounter, body header .timeCou
   width: 20%;
   background: rgba(255, 255, 255, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 15px;
+  border-radius: 10px;
   text-align: center;
-  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  text-transform: uppercase;
+  font-size: 140%;
+  font-family: "Bebas Neue", cursive;
 }
 
 body {
@@ -174,12 +179,8 @@ body header {
   justify-content: space-around;
   align-items: center;
 }
-body header .timeCounter {
-  font-size: large;
-}
 body header .quistionsCounter {
-  font-size: large;
-  color: black;
+  color: rgba(12, 9, 9, 0.715);
 }
 body main {
   font-family: "Bebas Neue", cursive;
@@ -203,10 +204,15 @@ body main .sectionCarts {
 body main .carts {
   background-color: rgb(237, 149, 149);
   border: 3px solid white;
-  margin: 2px;
+  margin: 10px;
   padding: 20px;
   border-radius: 5px;
   height: 220px;
+  width: 90%;
+  transition: 0.5s ease-in-out;
+}
+body main .carts:hover {
+  transform: scale(1.05);
 }
 body main h1 {
   color: white;
@@ -246,6 +252,17 @@ body main .wrong {
 body main .allready_answered {
   pointer-events: none;
 }
+body main .result > h2 {
+  color: white;
+  margin: 30px auto;
+  width: 50%;
+  text-align: center;
+  padding: 20px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+}
 body .answers-indicator {
   display: flex;
   align-items: center;
@@ -256,12 +273,13 @@ body .answers-indicator div {
   display: grid;
   height: 50px;
   width: 50px;
+  border-color: violet;
 }
 body .answers-indicator .wrong {
-  background-color: red;
-  background-image: url();
+  background-color: rgb(242, 117, 117);
+  background-image: url("/images/icons8-close-48.png");
 }
 body .answers-indicator .correct {
-  background-color: green;
-  background-image: url();
+  background-color: rgb(154, 235, 154);
+  background-image: url("/images/icons8-done-48.png");
 }/*# sourceMappingURL=style.css.map */

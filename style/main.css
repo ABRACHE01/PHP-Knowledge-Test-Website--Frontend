@@ -9,9 +9,12 @@
   position: relative;
   text-align: center;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  text-transform: uppercase;
 }
 
 .progressBar li:before {
+  background-image: url("/images/icons8-help-80.png");
+  background-size: cover;
   content: " ";
   line-height: 30px;
   border-radius: 50%;
@@ -28,7 +31,7 @@
   content: "";
   position: absolute;
   width: 100%;
-  height: 4px;
+  height: 5px;
   background-color: #ddd;
   top: 15px;
   left: -50%;
@@ -44,8 +47,8 @@
 }
 
 .progressBar li.active:before {
-  border-color: dodgerblue;
-  background-color: dodgerblue;
+  border-color: rgb(220, 117, 189);
+  background-color: rgb(220, 117, 189);
 }
 
 .progressBar .active:after {

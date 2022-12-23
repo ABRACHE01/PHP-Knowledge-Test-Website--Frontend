@@ -152,14 +152,32 @@ function quizResult(){
     resultBox.querySelector(".total-wrong").innerHTML=attempt-correntAnswers;
    
 }
+function timeCount(){
+   var timeLeft = 30;
+    var elem = document.getElementById('timer');
+    
+    var timerId = setInterval(countdown, 1000);
+    
+    function countdown() {
 
-window.onload= function(){
-
+      if (timeLeft == -1) {
+        clearTimeout(timerId);
+       next();
+      } else {
+        elem.innerHTML = timeLeft + ' seconds remaining';
+        timeLeft--;
+      }
+    }
+}
+window.onload = function(){
+    timeCount();
+    
     setAvailableQuestions();
 
     getNewQuestion();
 
     answerIndecator();
+   
    
 }
 

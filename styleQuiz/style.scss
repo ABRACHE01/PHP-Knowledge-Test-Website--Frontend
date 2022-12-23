@@ -3,17 +3,22 @@
 
 @use '../styleQuiz/imports/progressBar';
 
+
 %container{
     height: 20%;
     width: 20%;
     background: rgba(255, 255, 255, 0.2);
     border: 1px solid  rgba(255, 255, 255, 0.3);
-    border-radius: 15px;
+    border-radius: 10px;
     text-align: center;
-    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    text-transform: uppercase;
+    font-size:140%;
+    font-family: 'Bebas Neue', cursive;
+    
     }
 
 body{
+
     .hide{
         display: none;
 
@@ -37,22 +42,19 @@ body{
         align-items: center;
         .timeCounter{
         @extend %container;
-        font-size: large;
+       
      }
         .quistionsCounter{
             @extend %container;
-            font-size: large;
-            color: black;
+            
+            color: rgba(12, 9, 9, 0.715);
             
         }
-
-        img{
-            
-        }
-
 
     }
     main{
+      
+
         font-family: 'Bebas Neue', cursive;
         height: 100%;
         background: rgba(255, 255, 255, 0.2);
@@ -74,11 +76,18 @@ body{
         .carts{
             background-color: rgb(237, 149, 149);
             border: 3px solid white;
-            margin: 2px;
+            margin: 10px;
             padding: 20px;
             border-radius: 5px;
             height: 220px;
+            width: 90%;
+            transition: 0.5s ease-in-out;
+            
         }
+        .carts:hover{
+            transform: scale(1.05);
+        }
+
           h1{
       color:white;
       margin:30px auto;
@@ -122,9 +131,28 @@ body{
             
 
         }
+        .result>h2{
+            color:white;
+            margin:30px auto;
+            width:50%;
+            text-align:center;
+            padding:20px;
+            text-transform:uppercase;
+            letter-spacing:5px;
+            border-top:1px solid;
+            border-bottom:1px solid;
+          }
 
+          
+          
+     
+   
         
+   
+            
+           
 
+          
 
     }
     .answers-indicator{
@@ -139,16 +167,17 @@ body{
         display: grid;
         height: 50px;
         width:50px ;
+        border-color: violet;
        }
        .wrong{
-        background-color: red;
-        background-image: url();
+        background-color: rgb(242, 117, 117);
+        background-image: url("/images/icons8-close-48.png");
 
        }
 
        .correct{
-        background-color: green;
-        background-image: url();
+        background-color: rgb(154, 235, 154);
+        background-image: url("/images/icons8-done-48.png");
 
 
        }
