@@ -10,7 +10,7 @@
     border: 1px solid  rgba(255, 255, 255, 0.3);
     border-radius: 15px;
     text-align: center;
-    
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
     }
 
 body{
@@ -43,6 +43,7 @@ body{
             @extend %container;
             font-size: large;
             color: black;
+            
         }
 
         img{
@@ -78,6 +79,34 @@ body{
             border-radius: 5px;
             height: 220px;
         }
+          h1{
+      color:white;
+      margin:30px auto;
+      width:50%;
+      text-align:center;
+      padding:20px;
+      text-transform:uppercase;
+      font-size:3vw;
+      letter-spacing:5px;
+      border-top:1px solid;
+      border-bottom:1px solid;
+    }
+     
+    button{
+      width:100%;
+      height:80px;
+      position:relative;
+      background:rgba(255, 255, 255, .27);
+      text-transform:uppercase;
+      color:white;
+      font-weight:700;
+      letter-spacing:1px;
+      border:none;
+      font-size:15px;
+      outline:none;
+      font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+      cursor: pointer;
+    }
         .correct{
             
             background-color: green;
@@ -141,3 +170,6 @@ body{
 }
 
 
+
+   
+  

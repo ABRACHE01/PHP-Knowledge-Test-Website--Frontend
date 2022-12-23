@@ -22,7 +22,6 @@ function setAvailableQuestions(){
     }
     
 }
-
 function  getNewQuestion(){
    
     questionNumber.innerHTML = "Question "+ (questionCounter+1)+" of "+ quiz.length;
@@ -55,18 +54,16 @@ function  getNewQuestion(){
       option.className="carts";
       optionContainer.appendChild(option);
       option.setAttribute("type","button");
-      option.setAttribute("onclick","getResult(this)");   
+      option.setAttribute("onclick","getResult(this)"); 
     }
-  
     questionCounter++
 }
-
 //get the answer of current attempt question
 function getResult(element){
 
     const id = parseInt(element.id);
     // const id = element.id;
-    console.log(typeof id);
+    // console.log(typeof id);
     //get the answer by compiring the id of clocked option
     if (id === currentQuestion.answer){
         //set the green color to the current option
@@ -107,7 +104,7 @@ function  unclickableOption(){
 
 function answerIndecator(){
     
-    answerIndecatorContainer.innerHTML='';
+    // answerIndecatorContainer.innerHTML='';
     const totalQuestion = quiz.length;
     for(let i=0 ; i<totalQuestion ;i++){
         const indicator = document.createElement("div");
@@ -121,18 +118,13 @@ function updateAnswerIndecator(marktype){
     answerIndecatorContainer.children[questionCounter-1].classList.add(marktype);
 
 }
-// function button(){
 
-//     document.querySelector(".btn").classList.add("hide");
-
-// }
 function next(){
 
     if (questionCounter === quiz.length){
         quizOver();
     }else{
         getNewQuestion();
-        
     }
 
 }
