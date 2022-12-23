@@ -42,9 +42,11 @@
         <div class="sectionCarts option-container">
         
        </div>
-       <button type="button" onclick=" next();" ><h4>submit</h4></button>
+       
+       <button class="btn" type="button" onclick=" next(); " ><h4>submit</h4></button>
+
        <div class="answers-indicator">
-    
+
        </div>
    
     </main >
@@ -52,9 +54,13 @@
    
     <main class="result-Box hide">
         <div>
-            <h1>resaults score: <span class="total-quistion"></span></h1>
-            <h1>resaults score: <span>23</span></h1>
-            <h1>resaults score: <span>23</span></h1>
+           
+            <h1>total score: <span class="total-score"></span></h1>
+            <h1>percentage: <span class="total-percentage"></span></h1>
+            <h1>Total Quistions: <span class="total-quistion"></span></h1>
+            <h1>correct answers: <span class="total-correct"></span></h1>
+            <h1>wrong answers: <span class="total-wrong"></span></h1>
+            
         
         </div>
        
@@ -63,20 +69,19 @@
     </main>
     
     <footer>
-     
-        
         <div class="row">
             <div class="col-xs-12 col-md-8 offset-md-2 block border">
                 <div class="wrapper-progressBar">
                     <ul class="progressBar">
                         <li class="active">Informations</li>
                         <li class="active">Quistions</li>
-                        <li>Resault</li>
+                        <li id="Resault">Resault</li>
                     </ul>
                 </div>
             </div>
         </div>
     </footer>
+
 <script src="/js/data.js"></script>
 <script src="/js/app.js"></script>
 

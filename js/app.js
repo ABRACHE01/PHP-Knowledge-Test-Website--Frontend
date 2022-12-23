@@ -2,7 +2,6 @@ const questionNumber = document.querySelector(".qustion-number");
 const questionText = document.querySelector(".qustion-text");
 const optionContainer = document.querySelector(".option-container");
 const answerIndecatorContainer = document.querySelector(".answers-indicator");
-const homeBox = document.querySelector(".home-Box");
 const quizBox = document.querySelector(".quiz-Box");
 const resultBox = document.querySelector(".result-Box");
 
@@ -56,27 +55,25 @@ function  getNewQuestion(){
       option.className="carts";
       optionContainer.appendChild(option);
       option.setAttribute("type","button");
-      option.setAttribute("onclick","getResult(this)");
-      
+      option.setAttribute("onclick","getResult(this)");   
     }
-
+  
     questionCounter++
-
 }
-
-
 
 //get the answer of current attempt question
 function getResult(element){
 
     const id = parseInt(element.id);
+    // const id = element.id;
+    console.log(typeof id);
     //get the answer by compiring the id of clocked option
     if (id === currentQuestion.answer){
         //set the green color to the current option
         element.classList.add("correct");
         updateAnswerIndecator("correct");
-        correntAnswers ++;
-        console.log( "correct:"+ correntAnswers)
+        correntAnswers ++; 
+        // console.log( "correct:"+ correntAnswers)
     }else{
 
         //set the red color to inccorect options
@@ -86,7 +83,7 @@ function getResult(element){
         //if the anser id 
         const optionLen = optionContainer.children.length;
         for(let i=0; i<optionLen; i++){
-            if(parseInt( optionContainer.children[i].id) === currentQuestion.answer ){
+    if(parseInt(optionContainer.children[i].id) === currentQuestion.answer ){
                 optionContainer.children[i].classList.add("correct");
             }
         }
@@ -106,8 +103,7 @@ function  unclickableOption(){
         optionContainer.children[i].classList.add("allready_answered");
     }
 
-}  
-
+} 
 
 function answerIndecator(){
     
@@ -124,24 +120,24 @@ function updateAnswerIndecator(marktype){
 
     answerIndecatorContainer.children[questionCounter-1].classList.add(marktype);
 
-
-
 }
+// function button(){
+
+//     document.querySelector(".btn").classList.add("hide");
+
+// }
 function next(){
 
     if (questionCounter === quiz.length){
-        console.log("quiz over")
-
         quizOver();
-       
     }else{
         getNewQuestion();
+        
     }
 
 }
 
 function quizOver(){
-
     //hide quiz box
     quizBox.classList.add("hide");
 
@@ -151,14 +147,22 @@ function quizOver(){
 }
 
 function quizResult(){
+
+    const element = document.getElementById('Resault');
+         element.setAttribute('class', 'active');
+
+
     resultBox.querySelector(".total-quistion").innerHTML= quiz.length;
-    // quizBox.querySelector(".total-quistion").innerHTML=quiz.length;
-    // quizBox.querySelector(".total-quistion").innerHTML=quiz.length;
+    resultBox.querySelector(".total-score").innerHTML=correntAnswers*20+" pts";
+    const percentage = (correntAnswers/quiz.length)*100;
+    resultBox.querySelector(".total-percentage").innerHTML= percentage.toFixed()+"%";
+    resultBox.querySelector(".total-correct").innerHTML=correntAnswers;
+    resultBox.querySelector(".total-wrong").innerHTML=attempt-correntAnswers;
+   
 }
 
 window.onload= function(){
 
-    
     setAvailableQuestions();
 
     getNewQuestion();
