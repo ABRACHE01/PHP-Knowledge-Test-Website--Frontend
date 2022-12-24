@@ -12,18 +12,22 @@ let availableOptions =[];
 let correntAnswers =0;
 let attempt =0;
 
-
+//set quistions available in the data app 
 function setAvailableQuestions(){
 
     const totalQuestion = quiz.length;
 
     for(let i=0;i<totalQuestion;i++){
+
         availableQestions.push(quiz[i])
     }
     
 }
+
+
 function  getNewQuestion(){
-   
+
+   //counter of quistiond 
     questionNumber.innerHTML = "Question "+ (questionCounter+1)+" of "+ quiz.length;
 
 
@@ -58,13 +62,15 @@ function  getNewQuestion(){
     }
     questionCounter++
 }
+
 //get the answer of current attempt question
 function getResult(element){
 
     const id = parseInt(element.id);
     // const id = element.id;
     // console.log(typeof id);
-    //get the answer by compiring the id of clocked option
+
+    //get the answer by compiring the id of clicked option
     if (id === currentQuestion.answer){
         //set the green color to the current option
         element.classList.add("correct");
@@ -92,7 +98,9 @@ function getResult(element){
     unclickableOption();  
 }
 
+// make the buttons unclicble after the choice 
 function  unclickableOption(){
+
     const optinLen = optionContainer.children.length;
 
     for( let i=0 ;i<optinLen;i++ ){
@@ -102,10 +110,11 @@ function  unclickableOption(){
 
 } 
 
+//ceat cercle indecators 
 function answerIndecator(){
-    
-    // answerIndecatorContainer.innerHTML='';
+
     const totalQuestion = quiz.length;
+
     for(let i=0 ; i<totalQuestion ;i++){
         const indicator = document.createElement("div");
         answerIndecatorContainer.appendChild(indicator);
@@ -113,12 +122,17 @@ function answerIndecator(){
    
 }
 
+//this function adds to the the button answers the style eather wrong or correct
+
+ // marktype: correct or wrong 
+
 function updateAnswerIndecator(marktype){
 
     answerIndecatorContainer.children[questionCounter-1].classList.add(marktype);
 
 }
 
+//functin to move to the next quistion
 function next(){
 
     if (questionCounter === quiz.length){
@@ -129,21 +143,24 @@ function next(){
 
 }
 
+// i used this to show the result page 
 function quizOver(){
-    //hide quiz box
+    //hide quiz page
     quizBox.classList.add("hide");
 
-    //show quizbox 
+    //show quiz page
     resultBox.classList.add("remove");
     quizResult();
 }
 
+//this function is responsible of showing the result statistics
 function quizResult(){
 
+    //showing the stepper result
     const element = document.getElementById('Resault');
          element.setAttribute('class', 'active');
 
-
+    // result
     resultBox.querySelector(".total-quistion").innerHTML= quiz.length;
     resultBox.querySelector(".total-score").innerHTML=correntAnswers*20+" pts";
     const percentage = (correntAnswers/quiz.length)*100;
@@ -152,6 +169,8 @@ function quizResult(){
     resultBox.querySelector(".total-wrong").innerHTML=attempt-correntAnswers;
    
 }
+
+//counts the timming of eache quistion starting from 30s 
 function timeCount(){
    var timeLeft = 30;
     var elem = document.getElementById('timer');
@@ -169,6 +188,8 @@ function timeCount(){
       }
     }
 }
+
+// execute js fanctions 
 window.onload = function(){
     timeCount();
     
