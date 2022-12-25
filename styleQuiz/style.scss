@@ -118,12 +118,12 @@ body{
     }
         .correct{
             
-            background-color: green;
+            background-color: rgba(0, 255, 0, 0.533);
             color: aliceblue;
         }
         .wrong{
             
-            background-color: red;
+            background-color:rgba(255, 0, 0, 0.532);
             color: aliceblue;
         }
         .allready_answered{
@@ -131,7 +131,8 @@ body{
             
 
         }
-        .result>h2{
+       
+        .result>h3{
             color:white;
             margin:30px auto;
             width:50%;
@@ -143,16 +144,10 @@ body{
             border-bottom:1px solid;
           }
 
-          
-          
-     
-   
-        
-   
-            
-           
-
-          
+          a{
+            text-decoration: none;
+            color:white;
+            }
 
     }
     .answers-indicator{
@@ -182,14 +177,13 @@ body{
 
        }
 
-        
+      
 
 
     }
 
     footer{
         
-
 
     }
 

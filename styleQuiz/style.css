@@ -59,71 +59,6 @@ body {
   background: #eef1f3;
 }
 
-@-webkit-keyframes loader {
-  0% {
-    width: 0;
-  }
-  20% {
-    width: 10%;
-  }
-  25% {
-    width: 24%;
-  }
-  43% {
-    width: 41%;
-  }
-  56% {
-    width: 50%;
-  }
-  66% {
-    width: 52%;
-  }
-  71% {
-    width: 60%;
-  }
-  75% {
-    width: 76%;
-  }
-  94% {
-    width: 86%;
-  }
-  100% {
-    width: 100%;
-  }
-}
-
-@keyframes loader {
-  0% {
-    width: 0;
-  }
-  20% {
-    width: 10%;
-  }
-  25% {
-    width: 24%;
-  }
-  43% {
-    width: 41%;
-  }
-  56% {
-    width: 50%;
-  }
-  66% {
-    width: 52%;
-  }
-  71% {
-    width: 60%;
-  }
-  75% {
-    width: 76%;
-  }
-  94% {
-    width: 86%;
-  }
-  100% {
-    width: 100%;
-  }
-}
 .progress-bar {
   border-radius: 60px;
   overflow: hidden;
@@ -242,17 +177,17 @@ body main button {
   cursor: pointer;
 }
 body main .correct {
-  background-color: green;
+  background-color: rgba(0, 255, 0, 0.533);
   color: aliceblue;
 }
 body main .wrong {
-  background-color: red;
+  background-color: rgba(255, 0, 0, 0.532);
   color: aliceblue;
 }
 body main .allready_answered {
   pointer-events: none;
 }
-body main .result > h2 {
+body main .result > h3 {
   color: white;
   margin: 30px auto;
   width: 50%;
@@ -262,6 +197,10 @@ body main .result > h2 {
   letter-spacing: 5px;
   border-top: 1px solid;
   border-bottom: 1px solid;
+}
+body main a {
+  text-decoration: none;
+  color: white;
 }
 body .answers-indicator {
   display: flex;

@@ -34,9 +34,10 @@ function  getNewQuestion(){
     const questionIndex= availableQestions[Math.floor(Math.random()*availableQestions.length)];
 
      currentQuestion=questionIndex;
-
+    // console.log(currentQuestion);
     questionText.innerHTML = currentQuestion.q;
     const index1= availableQestions.indexOf(questionIndex);
+    // console.log(index1);
     availableQestions.splice(index1,1);
 
     
@@ -48,10 +49,12 @@ function  getNewQuestion(){
         availableOptions.push(i)
     }
 
+    
+    // console.log(availableOptions)
     document.querySelector(".option-container").innerHTML="";
 
     for( let i=0; i< optionLen ; i++){
-        // Text.innerText=""
+        
       const option = document.createElement("button");
       option.innerHTML = currentQuestion.option[i];
       option.id= i;
@@ -60,6 +63,7 @@ function  getNewQuestion(){
       option.setAttribute("type","button");
       option.setAttribute("onclick","getResult(this)"); 
     }
+    
     questionCounter++
 }
 
@@ -71,31 +75,43 @@ function getResult(element){
     // console.log(typeof id);
 
     //get the answer by compiring the id of clicked option
-    if (id === currentQuestion.answer){
+    //|| id === currentQuestion.answer2 
+    if (id === currentQuestion.answer ){
         //set the green color to the current option
         element.classList.add("correct");
         updateAnswerIndecator("correct");
+
+        
         correntAnswers ++; 
         // console.log( "correct:"+ correntAnswers)
     }else{
 
         //set the red color to inccorect options
-        element.classList.add("wrong");
+        element.classList.add("wrong")
         updateAnswerIndecator("wrong");
 
         //if the anser id 
         const optionLen = optionContainer.children.length;
         for(let i=0; i<optionLen; i++){
-    if(parseInt(optionContainer.children[i].id) === currentQuestion.answer ){
+            // || parseInt(optionContainer.children[i].id) === currentQuestion.answer2 
+    if(parseInt(optionContainer.children[i].id) === currentQuestion.answer  ){
                 optionContainer.children[i].classList.add("correct");
+                
             }
         }
-
-
-      
+   
     }
     attempt++;
-    unclickableOption();  
+
+
+    
+    unclickableOption();
+
+    setTimeout(function(){
+        next();
+    }, 2000);
+    
+    
 }
 
 // make the buttons unclicble after the choice 
@@ -139,6 +155,7 @@ function next(){
         quizOver();
     }else{
         getNewQuestion();
+        // progress bar 
     }
 
 }
@@ -171,28 +188,24 @@ function quizResult(){
 }
 
 //counts the timming of eache quistion starting from 30s 
-function timeCount(){
-   var timeLeft = 30;
-    var elem = document.getElementById('timer');
-    
-    var timerId = setInterval(countdown, 1000);
-    
-    function countdown() {
 
-      if (timeLeft == -1) {
-        clearTimeout(timerId);
-       next();
-      } else {
-        elem.innerHTML = timeLeft + ' seconds remaining';
-        timeLeft--;
-      }
-    }
-}
+// function timeCount(){
+//     // setTimeout(function(){
+
+//     //     optionContainer.children.classList.add("wrong");
+//     //         next();
+        
+            
+//     // }, 2000);
+
+    
+    
+
+// }
 
 // execute js fanctions 
 window.onload = function(){
-    timeCount();
-    
+    // timeCount();
     setAvailableQuestions();
 
     getNewQuestion();
@@ -201,6 +214,7 @@ window.onload = function(){
    
    
 }
+
 
 
 
