@@ -144,7 +144,7 @@ body main .carts {
   border-radius: 5px;
   height: 220px;
   width: 90%;
-  transition: 0.5s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 body main .carts:hover {
   transform: scale(1.05);
@@ -156,7 +156,7 @@ body main h1 {
   text-align: center;
   padding: 20px;
   text-transform: uppercase;
-  font-size: 3vw;
+  font-size: 2vw;
   letter-spacing: 5px;
   border-top: 1px solid;
   border-bottom: 1px solid;

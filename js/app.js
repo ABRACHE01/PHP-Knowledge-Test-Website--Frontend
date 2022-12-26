@@ -18,7 +18,6 @@ function setAvailableQuestions(){
     const totalQuestion = quiz.length;
 
     for(let i=0;i<totalQuestion;i++){
-
         availableQestions.push(quiz[i])
     }
     
@@ -63,8 +62,8 @@ function  getNewQuestion(){
       option.setAttribute("type","button");
       option.setAttribute("onclick","getResult(this)"); 
     }
-    
     questionCounter++
+   
 }
 
 //get the answer of current attempt question
@@ -73,7 +72,6 @@ function getResult(element){
     const id = parseInt(element.id);
     // const id = element.id;
     // console.log(typeof id);
-
     //get the answer by compiring the id of clicked option
     //|| id === currentQuestion.answer2 
     if (id === currentQuestion.answer ){
@@ -102,11 +100,7 @@ function getResult(element){
    
     }
     attempt++;
-
-
-    
     unclickableOption();
-
     setTimeout(function(){
         next();
     }, 2000);
@@ -155,7 +149,7 @@ function next(){
         quizOver();
     }else{
         getNewQuestion();
-        // progress bar 
+        
     }
 
 }
@@ -179,10 +173,23 @@ function quizResult(){
 
     // result
     resultBox.querySelector(".total-quistion").innerHTML= quiz.length;
+
     resultBox.querySelector(".total-score").innerHTML=correntAnswers*20+" pts";
+
     const percentage = (correntAnswers/quiz.length)*100;
-    resultBox.querySelector(".total-percentage").innerHTML= percentage.toFixed()+"%";
+
+    let per=resultBox.querySelector(".total-percentage").innerHTML= percentage.toFixed()+"%";
+
+    if(per < 50){
+
+    }else if(per<90){
+
+    }else{
+
+    }
+
     resultBox.querySelector(".total-correct").innerHTML=correntAnswers;
+
     resultBox.querySelector(".total-wrong").innerHTML=attempt-correntAnswers;
    
 }
@@ -190,22 +197,31 @@ function quizResult(){
 //counts the timming of eache quistion starting from 30s 
 
 // function timeCount(){
-//     // setTimeout(function(){
-
-//     //     optionContainer.children.classList.add("wrong");
-//     //         next();
-        
-            
-//     // }, 2000);
-
+   
+//         var sec = 3;
+//         const timer= setInterval(function() {
+//           document.getElementById("timer").innerHTML =  sec;
+//           sec--;
     
-    
-
+//             if (sec == -1) {
+                
+//                 updateAnswerIndecator("wrong");
+//                 next();
+//                 clearInterval(timer);
+               
+                
+//               }
+           
+              
+          
+//         }, 1000);
 // }
 
 // execute js fanctions 
 window.onload = function(){
-    // timeCount();
+    
+    // timeCount(); 
+
     setAvailableQuestions();
 
     getNewQuestion();
