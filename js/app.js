@@ -189,7 +189,7 @@ function quizResult() {
 
 //counts the timming of eache quistion starting from 30s
 function timeCount() {
-  let sec = 5;
+  let sec = 30;
 
   timer = setInterval(function () {
     document.getElementById("timer").innerHTML = sec +" s";
