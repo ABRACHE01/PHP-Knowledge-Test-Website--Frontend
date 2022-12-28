@@ -139,6 +139,7 @@ function next(){
     quizOver();
   } else {
     getNewQuestion();
+    clearInterval(timer);
   }
 }
 
@@ -151,8 +152,6 @@ function quizOver() {
   //show quiz page
   resultBox.classList.add("remove");
   quizResult();
-   clearInterval(timer);
-
 }
 
 
@@ -163,8 +162,7 @@ function quizResult() {
   const element = document.getElementById("Resault");
   element.setAttribute("class", "active");
   // result
-  resultBox.querySelector(".total-score").innerHTML =
-    correntAnswers * 20 + " pts";
+  resultBox.querySelector(".total-score").innerHTML = correntAnswers * 20 + " pts";
 
   const percentage = (correntAnswers / quiz.length) * 100;
 
@@ -172,15 +170,15 @@ function quizResult() {
     percentage.toFixed() + "%");
 
   d = parseInt(per);
-
   if (d < 50) {
-    resultBox.querySelector(".total-quistion").innerHTML =
+    resultBox.querySelector(".feedback").innerHTML =
       "you need a bit more documentations";
   } else if (d >= 90) {
-    resultBox.querySelector(".total-quistion").innerHTML = "exllent !!";
+    resultBox.querySelector(".feedback").innerHTML = "exllent !!";
   } else {
-    resultBox.querySelector(".total-quistion").innerHTML = "good !!";
+    resultBox.querySelector(".feedback").innerHTML = "good !!";
   }
+
 
   resultBox.querySelector(".total-correct").innerHTML = correntAnswers;
   resultBox.querySelector(".total-wrong").innerHTML = wrongAnswers;
@@ -194,20 +192,27 @@ function timeCount() {
   let sec = 5;
 
   timer = setInterval(function () {
-    document.getElementById("timer").innerHTML = sec;
+    document.getElementById("timer").innerHTML = sec +" s";
     sec--;
 
     if (sec == -1) {
-      updateAnswerIndecator("wrong");
-      wrongAnswers++;
+      
       clearInterval(timer);
+      updateAnswerIndecator("wrong");
+      wrongAnswers++;  
       next();
       timeCount();
     }
   }, 1000);
 
-}
+  if(correntAnswers + wrongAnswers === quiz.length){
 
+    clearInterval(timer);
+    document.getElementById("timer").innerHTML="time over";
+
+  }
+
+}
 
 
 // execute js fanctions
